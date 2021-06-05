@@ -1,0 +1,5 @@
+<div class="content-item" [ngClass]="blogPost.enabled ? 'active' : 'inactive'">
+  <p>{{ blogPost.title }}</p>
+  <p>{{ blogPost.description }}</p>
+  <button (click)="onDeleteClick()">Remove this post!</button>
+</div>

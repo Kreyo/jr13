@@ -1,0 +1,23 @@
+<div class="modal">
+  <div class="modal-window">
+    <h1>Add a blog post!</h1>
+    <form>
+      <div class="form-item form-item-flex">
+        <label for="title">Title</label>
+        <input [(ngModel)]="form.title" placeholder="Title" id="title" name="title"/>
+      </div>
+      <div class="form-item form-item-flex">
+        <label for="description">Description</label>
+        <textarea [(ngModel)]="form.description" id="description" name="description"></textarea>
+      </div>
+      <div class="form-item">
+        <label for="enabled">Is enabled?</label>
+        <input type="checkbox" [(ngModel)]="form.enabled" id="enabled" name="enabled"/>
+      </div>
+    </form>
+    <div class="buttons">
+      <button (click)="triggerCloseEvent()" class="btn-close">Close</button>
+      <button type="button" (click)="triggerBlogAddRecord()">Add record</button>
+    </div>
+  </div>
+</div>

@@ -21,4 +21,5 @@ export class BlogPostComponent implements OnInit {
 	onDisableButtonClick() {
 		this.disableClicked.emit(this.blogPost.id);
 	}
+
 }

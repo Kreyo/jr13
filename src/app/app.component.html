@@ -1,15 +1,4 @@
-<app-modal
-  *ngIf="modalOpened"
-  (closeButtonClicked)="toggleModal($event)"
-  (blogAddTriggeredFromModal)="addBlogRecord($event)">
-</app-modal>
 <app-header></app-header>
 <main>
-  <app-news class="feed" [news]="news"></app-news>
-  <app-blog
-    class="content"
-    (modalButtonClicked)="toggleModal($event)"
-    [blogs]="blogPosts"
-    (deleteBlogpostClicked)="remove($event)">
-  </app-blog>
+  <router-outlet></router-outlet>
 </main>

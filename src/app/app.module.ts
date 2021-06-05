@@ -8,6 +8,16 @@ import { BlogComponent } from './blog/blog.component';
 import { ModalComponent } from './modal/modal.component';
 import { BlogPostComponent } from './blog-post/blog-post.component';
 import { FormsModule } from "@angular/forms";
+import { RouterModule, Routes } from "@angular/router";
+import { RegisterComponent } from './register/register.component';
+import { HomeComponent } from './home/home.component';
+import { BlogItemComponent } from './blog-item/blog-item.component';
+
+const routes: Routes = [
+  { path: 'register', component: RegisterComponent },
+  { path: 'blog/:id', component: BlogItemComponent },
+  { path: '', component: HomeComponent },
+];
 
 @NgModule({
   declarations: [
@@ -16,11 +26,15 @@ import { FormsModule } from "@angular/forms";
     NewsComponent,
     BlogComponent,
     ModalComponent,
-    BlogPostComponent
+    BlogPostComponent,
+    RegisterComponent,
+    HomeComponent,
+    BlogItemComponent
   ],
     imports: [
         BrowserModule,
-        FormsModule
+        FormsModule,
+        RouterModule.forRoot(routes),
     ],
   providers: [],
   bootstrap: [AppComponent]

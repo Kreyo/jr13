@@ -1,5 +1,7 @@
 <div class="content">
-  <h2>Blog post</h2>
-  <a href="#" (click)="triggerModalEvent()">Add a blog post!</a>
-  <app-blog-post *ngFor="let blog of blogs" [blogPost]="blog" (deleteClicked)="onDeleteClick($event)"></app-blog-post>
+	<h2>Blog post</h2>
+	<a href="#" (click)="triggerModalEvent()">Add a blog post!</a>
+	<app-blog-post *ngFor="let blog of blogs" [blogPost]="blog" (deleteClicked)="onDeleteClick($event)"
+		(disableClicked)="onDisableButtonClick($event)">
+	</app-blog-post>
 </div>

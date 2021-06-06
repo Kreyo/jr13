@@ -12,10 +12,12 @@ import { RouterModule, Routes } from "@angular/router";
 import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { BlogItemComponent } from './blog-item/blog-item.component';
+import { DogsComponent } from './dogs/dogs.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'blog/:id', component: BlogItemComponent },
+  { path: 'dogs', component: DogsComponent },
   { path: '', component: HomeComponent },
 ];
 
@@ -29,7 +31,8 @@ const routes: Routes = [
     BlogPostComponent,
     RegisterComponent,
     HomeComponent,
-    BlogItemComponent
+    BlogItemComponent,
+    DogsComponent
   ],
     imports: [
         BrowserModule,

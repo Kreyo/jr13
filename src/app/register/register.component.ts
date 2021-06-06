@@ -13,6 +13,7 @@ export class RegisterComponent implements OnInit {
   }
 
   errorMessage: string = '';
+  successMessage: string = '';
 
   constructor() { }
 
@@ -20,13 +21,38 @@ export class RegisterComponent implements OnInit {
   }
 
   onFormValidate(): void {
-    console.log(this.registerForm);
+    const { name, surname, email } = this.registerForm;
+    if (!name || !surname || !email) {
+      this.errorMessage = 'All fields are required!';
+      return;
+    }
+    if (name.length < 2) {
+      this.errorMessage = 'Name must be at least 2 characters long!';
+      return;
+    }
+    if (surname.length < 2) {
+      this.errorMessage = 'Surname must be at least 2 characters long!';
+      return;
+    }
+    if (email.length < 3) {
+      this.errorMessage = 'Email must be at least 3 characters long!';
+      return;
+    }
+    if (!email.includes('@')) {
+      this.errorMessage = 'Email must contain an @ character!';
+      return;
+    }
 
-    // validate name
-    // validate surname
-    // validate email
+    this.errorMessage = '';
+    this.successMessage = 'Registration success!';
 
-    // if something not ok - show error message
+    // fetch('https://localhost/api/register', {
+    //   method: 'POST',
+    //   body: this.registerForm,
+    // })
+    //   .then(response => response.json())
+    //   .then(response => console.log(response))
+    //   .catch(e => console.error(e));
   }
 
 }

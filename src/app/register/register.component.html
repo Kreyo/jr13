@@ -1,1 +1,21 @@
-<p>register works!</p> hello!
+<h1>Register</h1>
+<form class="register-form">
+  <div class="error" *ngIf="errorMessage">
+    {{ errorMessage }}
+  </div>
+  <div class="form-item">
+    <label for="name">Name</label>
+    <input id="name" type="text" [(ngModel)]="registerForm.name" name="name"/>
+  </div>
+  <div class="form-item">
+    <label for="surname">Surname</label>
+    <input id="surname" type="text" [(ngModel)]="registerForm.surname" name="surname"/>
+  </div>
+  <div class="form-item">
+    <label for="email">Email</label>
+    <input id="email" type="email" [(ngModel)]="registerForm.email" name="email"/>
+  </div>
+  <div class="button-block">
+    <button type="button" (click)="onFormValidate()">Submit registration!</button>
+  </div>
+</form>

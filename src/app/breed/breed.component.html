@@ -1,4 +1,5 @@
 <h1>Dogs!!!</h1>
+<div *ngIf="errorMessage">{{ errorMessage }}</div>
 <div class="dogs">
   <div *ngFor="let dog of dogs">
     <img [src]="dog.url" height="200" width="200" alt="doggo!"/>

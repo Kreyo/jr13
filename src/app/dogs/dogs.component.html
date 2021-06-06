@@ -1,8 +1,10 @@
 <h1>Dogs!!!</h1>
 <div class="dogs">
   <div *ngFor="let dog of dogs">
-    <img [src]="dog.url" height="200" width="200" alt="doggo!"/>
-    <h5 *ngIf="dog.breeds.length">{{ dog.breeds[0].name }}</h5>
-    <h5 *ngIf="!dog.breeds.length">Unknown boi!</h5>
+    <a routerLink="/breed/{{ dog.breeds.length ? dog.breeds[0].id : 'unknown' }}">
+      <img [src]="dog.url" height="200" width="200" alt="doggo!"/>
+      <h5 *ngIf="dog.breeds.length">{{ dog.breeds[0].name }}</h5>
+      <h5 *ngIf="!dog.breeds.length">Unknown boi!</h5>
+    </a>
   </div>
 </div>

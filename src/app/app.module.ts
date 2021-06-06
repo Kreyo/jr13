@@ -13,11 +13,13 @@ import { RegisterComponent } from './register/register.component';
 import { HomeComponent } from './home/home.component';
 import { BlogItemComponent } from './blog-item/blog-item.component';
 import { DogsComponent } from './dogs/dogs.component';
+import { BreedComponent } from './breed/breed.component';
 
 const routes: Routes = [
   { path: 'register', component: RegisterComponent },
   { path: 'blog/:id', component: BlogItemComponent },
   { path: 'dogs', component: DogsComponent },
+  { path: 'breed/:id', component: BreedComponent },
   { path: '', component: HomeComponent },
 ];
 
@@ -32,7 +34,8 @@ const routes: Routes = [
     RegisterComponent,
     HomeComponent,
     BlogItemComponent,
-    DogsComponent
+    DogsComponent,
+    BreedComponent
   ],
     imports: [
         BrowserModule,
